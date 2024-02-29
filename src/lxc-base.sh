@@ -27,23 +27,23 @@ locale-gen $LXC_LOCALE
 if [ "$LXC_TEMPLATE_VERSION" == "debian-11-standard" ] ; then
 
 cat << EOF > /etc/apt/sources.list
-deb http://debian.inf.tu-dresden.de/debian bullseye main contrib
+deb http://$LXC_DEBIAN_MIRROR/debian bullseye main contrib
 
-deb http://debian.inf.tu-dresden.de/debian bullseye-updates main contrib
+deb http://$LXC_DEBIAN_MIRROR/debian bullseye-updates main contrib
 
 # security updates
-deb http://debian.inf.tu-dresden.de/debian-security bullseye-security main contrib
+deb http://security.debian.org/debian-security bullseye-security main contrib
 EOF
 
 elif [ "$LXC_TEMPLATE_VERSION" == "debian-10-standard" ] ; then
 
 cat << EOF > /etc/apt/sources.list
-deb http://debian.inf.tu-dresden.de/debian buster main contrib
+deb http://$LXC_DEBIAN_MIRROR/debian buster main contrib
 
-deb http://debian.inf.tu-dresden.de/debian buster-updates main contrib
+deb http://$LXC_DEBIAN_MIRROR/debian buster-updates main contrib
 
 # security updates
-deb http://debian.inf.tu-dresden.de/debian-security buster/updates main contrib
+deb http://security.debian.org/debian-security buster/updates main contrib
 EOF
 else echo "LXC Debian Version false. Please check configuration files!" ; exit
 fi
