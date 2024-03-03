@@ -11,6 +11,7 @@ Proxmox VE Server (>=6.30) with at least one configured ZFS Pool.
 - `checkmk` => Check_MK 2.0 Monitoring Server [checkmk.com](https://checkmk.com/)
 - `debian-priv` => Debian privileged container with basic toolset
 - `debian-unpriv` => Debian unprivileged container with basic toolset
+- `docker` => Debian unprivileged container with Docker
 - `ecodms` => Fullfeatured DMS [ecodms.de](https://www.ecodms.de)
 - `gitea` => Lightweight and fast self-hosted git service [gitea.io](https://gitea.io)
 - `kimai` => Kimai Time-Tracking [kimai.org](https://www.kimai.org/)
