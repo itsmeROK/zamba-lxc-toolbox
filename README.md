@@ -7,6 +7,7 @@ The package also provides LXC container installers for `mailpiler`, `matrix-syna
 ### Requirements
 Proxmox VE Server (>=6.30) with at least one configured ZFS Pool.
 ### Included services:
+- `ad-guard` => AdGuard Home (https://adguard.com/)
 - `bookstack` => Bookstack wiki software [bookstackapp.com](https://www.bookstackapp.com/)
 - `checkmk` => Check_MK 2.0 Monitoring Server [checkmk.com](https://checkmk.com/)
 - `debian-priv` => Debian privileged container with basic toolset
