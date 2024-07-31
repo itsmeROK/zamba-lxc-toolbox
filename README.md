@@ -7,7 +7,7 @@ The package also provides LXC container installers for `mailpiler`, `matrix-syna
 ### Requirements
 Proxmox VE Server (>=6.30) with at least one configured ZFS Pool.
 ### Included services:
-- `adguard` => AdGuard Home (https://adguard.com/)
+- `adguard` => AdGuard Home [adguard.com](https://adguard.com/)
 - `bookstack` => Bookstack wiki software [bookstackapp.com](https://www.bookstackapp.com/)
 - `checkmk` => Check_MK 2.0 Monitoring Server [checkmk.com](https://checkmk.com/)
 - `debian-priv` => Debian privileged container with basic toolset
@@ -17,6 +17,7 @@ Proxmox VE Server (>=6.30) with at least one configured ZFS Pool.
 - `gitea` => Lightweight and fast self-hosted git service [gitea.io](https://gitea.io)
 - `kimai` => Kimai Time-Tracking [kimai.org](https://www.kimai.org/)
 - `kopano-core` => Kopano Core Groupware [kopano.io](https://kopano.io/)
+- `localstack` => Develop and test your AWS applications locally [localstack.cloud](https://www.localstack.cloud/)
 - `mailpiler` => mailpiler mail archive [mailpiler.org](https://www.mailpiler.org/)
 - `matrix` => Matrix Synapse Homeserver [matrix.org](https://matrix.org/docs/projects/server/synapse) with Element Web [Element on github](https://github.com/vector-im/element-web)
 - `nextcloud` => Nextcloud Server [nextcloud.com](https://nextcloud.com/) with fail2ban und redis configuration
@@ -31,8 +32,8 @@ Proxmox VE Server (>=6.30) with at least one configured ZFS Pool.
 - `zammad` => Zammad Helpdesk and Ticketing Software [zammad.org](https://zammad.org/)
 - `zmb-ad` => ZMB (Samba) Active Directory Domain Controller, DNS Backends `SAMBA_INTERNAL` and `BIND9_DLZ` are supported
 - `zmb-ad-join` => Additional Active Directory Domain Controller joining an existing Domain
-- `zmb-member` => ZMB (Samba) AD member with ZFS volume snapshot support (previous versions)
-- `zmb-standalone` => ZMB (Samba) standalone server with ZFS volume snapshot support (previous versions)
+- `zmb-member` => ZMB (Samba) AD member with ZFS volume snapshot support
+- `zmb-standalone` => ZMB (Samba) standalone server with ZFS volume snapshot support
 ## Usage
 Just ssh into your Proxmox machine and clone this git repository. Make sure you have installed `git`.
 ```bash

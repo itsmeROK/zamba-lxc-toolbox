@@ -11,23 +11,12 @@ source /root/functions.sh
 source /root/zamba.conf
 source /root/constants-service.conf
 
-apt update && sudo apt-get install ca-certificates apt-transport-https
+wget -O - https://www.mongodb.org/static/pgp/server-7.0.asc | gpg --dearmor > /usr/share/keyrings/mongodb-server-7.0.gpg
+wget -O - https://dl.ubnt.com/unifi/unifi-repo.gpg | gpg --dearmor > /usr/share/keyrings/unifi.gpg
 
-wget -qO - https://www.mongodb.org/static/pgp/server-3.6.asc | sudo apt-key add -
-wget -O /etc/apt/trusted.gpg.d/unifi-repo.gpg https://dl.ui.com/unifi/unifi-repo.gpg
-
-echo "deb [trusted=yes] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/3.6 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.6.list
-echo 'deb [ arch=amd64,arm64 ] https://www.ui.com/downloads/unifi/debian stable ubiquiti' | sudo tee /etc/apt/sources.list.d/unifi.list 
+echo "deb [ signed-by=/usr/share/keyrings/mongodb-server-7.0.gpg ] http://repo.mongodb.org/apt/debian bookworm/mongodb-org/7.0 main" | sudo tee /etc/apt/sources.list.d/mongodb-org-7.0.list
+echo "deb [ signed-by=/usr/share/keyrings/unifi.gpg ] http://www.ui.com/downloads/unifi/debian stable ubiquiti" > /etc/apt/sources.list.d/unifi.list 
 
 apt update
 
-# fix java certs
-mkdir -p /etc/ssl/certs/java/
-sudo apt install --reinstall -o Dpkg::Options::="--force-confask,confnew,confmiss" --reinstall ca-certificates-java ssl-cert openssl ca-certificates
-
-DEBIAN_FRONTEND=noninteractive DEBIAN_PRIORITY=critical apt install -y -qq unifi
-
-echo 
-echo Continue: http://$(hostname -I | xargs):8443
-echo 
-echo UniFi Network Server in LXC is ready.
+DEBIAN_FRONTEND=noninteractive DEBIAN_PRIORITY=critical apt install -y -qq default-jre-headless unifi
